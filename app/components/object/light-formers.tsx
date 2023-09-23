@@ -5,8 +5,9 @@ import { Lightformer, Float } from '@react-three/drei'
 import { Color, Depth, LayerMaterial } from 'lamina'
 
 export default function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
-  const group = useRef()
-  useFrame((state, delta) => (group.current.position.z += delta * 10) > 20 && (group.current.position.z = -60))
+  const group = useRef<THREE.Group>(null)
+  // useFrame((state, delta) => (group.current!.position.z += delta * 10) > 20 && (group.current!.position.z = -60))
+
   return (
     <>
       {/* Ceiling */}
