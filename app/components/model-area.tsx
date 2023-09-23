@@ -63,15 +63,12 @@ export default function ModelArea() {
           position={[1, 5, -1]}
         />
       </AccumulativeShadows>
-      
+
       <Environment frames={degraded ? 1 : Infinity} resolution={256} background blur={1}>
         <Lightformers />
       </Environment>
 
       <group>
-        {/* <GirlModel position={[0, 0.4, 0]} /> */}
-        {/* <CarModel position={[0, 0.4, 0]} /> */}
-        {/* <BaalModel position={[0, 0.4, 0]} /> */}
         <BmwModel position={[0, -1, 0]} />
 
         {/* 平面 */}
