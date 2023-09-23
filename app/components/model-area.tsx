@@ -11,7 +11,6 @@ import { useAppDispatch } from 'hooks'
 import { BmwModel } from 'components/model'
 import Lightformers from 'components/object/light-formers'
 
-
 export default function ModelArea() {
   const [degraded, degrade] = useState()
   const intensity = 4
