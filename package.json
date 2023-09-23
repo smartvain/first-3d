@@ -19,6 +19,7 @@
     "autoprefixer": "10.4.15",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
+    "lamina": "^1.1.23",
     "next": "13.4.19",
     "postcss": "8.4.29",
     "r3f-perf": "^7.1.2",
