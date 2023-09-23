@@ -1,18 +1,22 @@
 'use strict'
 
 import * as THREE from 'three'
-import { useHelper } from '@react-three/drei'
-import { Perf } from 'r3f-perf'
-import { useEffect, useRef } from 'react'
-import { BmwModel } from './model'
-import { useAppDispatch } from '@/hooks'
-import { setPosition } from '@/features/camera'
+import { useEffect, useRef, useState } from 'react'
 import { useThree } from '@react-three/fiber'
+import { useHelper, AccumulativeShadows, RandomizedLight, Environment } from '@react-three/drei'
+import { Perf } from 'r3f-perf'
+
+import { setPosition } from 'features/camera'
+import { useAppDispatch } from 'hooks'
+import { BmwModel } from 'components/model'
+import Lightformers from 'components/object/light-formers'
+
 
 export default function ModelArea() {
-  const directionalLight = useRef<THREE.DirectionalLight>(null)
+  const [degraded, degrade] = useState()
   const intensity = 4
 
+  const directionalLight = useRef<THREE.DirectionalLight>(null)
   useHelper(
     directionalLight as React.MutableRefObject<THREE.DirectionalLight>,
     THREE.DirectionalLightHelper,
@@ -21,9 +25,7 @@ export default function ModelArea() {
   )
 
   const { camera } = useThree()
-
   const dispatch = useAppDispatch()
-
   useEffect(() => {
     dispatch(setPosition(camera.position))
   }, [])
@@ -47,6 +49,24 @@ export default function ModelArea() {
         intensity={intensity}
         shadow-mapSize={[1024, 1024]}
       />
+
+      <AccumulativeShadows
+        position={[0, -1.16, 0]}
+        frames={100}
+        alphaTest={0.9}
+        scale={10}
+      >
+        <RandomizedLight
+          amount={8}
+          radius={10}
+          ambient={0.5}
+          position={[1, 5, -1]}
+        />
+      </AccumulativeShadows>
+      
+      <Environment frames={degraded ? 1 : Infinity} resolution={256} background blur={1}>
+        <Lightformers />
+      </Environment>
 
       <group>
         {/* <GirlModel position={[0, 0.4, 0]} /> */}
