@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { StrictMode, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Sky } from '@react-three/drei'
-import ModelArea from './model-area'
+import ModelArea from './ModelArea'
 
 export default function CanvasWrapper () {
   return (
@@ -23,8 +23,6 @@ export default function CanvasWrapper () {
             position: [3, 0.5, -3]
           }}
         >
-          <Sky distance={450000} sunPosition={[1, 1, 1]} />
-
           <OrbitControls makeDefault />
 
           <Suspense fallback={null}>

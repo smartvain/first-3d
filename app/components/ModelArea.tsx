@@ -8,7 +8,7 @@ import { Perf } from 'r3f-perf'
 
 import { setPosition } from 'features/camera'
 import { useAppDispatch } from 'hooks'
-import { BmwModel } from 'components/model'
+import { BmwModel } from 'components/Model'
 import Lightformers from 'components/object/light-formers'
 
 export default function ModelArea() {
