@@ -68,18 +68,7 @@ export default function ModelArea() {
       </Environment>
 
       <group>
-        <BmwModel position={[0, -1, 0]} />
-
-        {/* 平面 */}
-        <mesh
-          receiveShadow
-          rotation-x={-Math.PI * 0.5}
-          scale={20}
-          position={[0, -1, 0]}
-        >
-          <planeGeometry />
-          <meshStandardMaterial color="gray" />
-        </mesh>
+        <BmwModel position={[0, -1.15, 0]} />
       </group>
     </>
   )
