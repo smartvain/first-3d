@@ -9,7 +9,7 @@ import { Perf } from 'r3f-perf'
 import { setPosition } from 'features/camera'
 import { useAppDispatch } from 'hooks'
 import { BmwModel } from 'components/Model'
-import Lightformers from 'components/object/light-formers'
+import Lightformers from '@/components/object/LightFormers'
 
 export default function ModelArea() {
   const [degraded, degrade] = useState()
