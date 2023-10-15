@@ -1,15 +1,15 @@
 'use strict'
 
 import * as THREE from 'three'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useThree } from '@react-three/fiber'
 import { useHelper, AccumulativeShadows, RandomizedLight, Environment } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 
 import { setPosition } from 'features/camera'
 import { useAppDispatch } from 'hooks'
-import { BmwModel } from 'components/Model'
 import Lightformers from '@/components/object/LightFormers'
+import GLTFModel from './models/GLTFModel'
 
 export default function ModelArea() {
   const [degraded, degrade] = useState()
@@ -25,9 +25,7 @@ export default function ModelArea() {
 
   const { camera } = useThree()
   const dispatch = useAppDispatch()
-  useEffect(() => {
-    dispatch(setPosition(camera.position))
-  }, [])
+  dispatch(setPosition(camera.position))
 
   return (
     <>
@@ -67,9 +65,10 @@ export default function ModelArea() {
         <Lightformers />
       </Environment>
 
-      <group>
-        <BmwModel position={[0, -1.15, 0]} />
-      </group>
+      <GLTFModel
+        src="/3dmodels/bmw_m4csl/scene.gltf"
+        position={[0, -1.15, 0]}
+      />
     </>
   )
 }
