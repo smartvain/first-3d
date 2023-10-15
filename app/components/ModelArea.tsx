@@ -49,9 +49,9 @@ export default function ModelArea() {
 
       <AccumulativeShadows
         position={[0, -1.16, 0]}
-        frames={100}
-        alphaTest={0.9}
-        scale={10}
+        frames={200}
+        alphaTest={0.8}
+        scale={8}
       >
         <RandomizedLight
           amount={8}
