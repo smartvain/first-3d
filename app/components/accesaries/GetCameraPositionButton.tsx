@@ -1,6 +1,6 @@
 import { useAppSelector } from "@/hooks"
 
-export default function GetCameraPositionButton() {
+const GetCameraPositionButton = () => {
   const cameraPosition = useAppSelector(state => state.position)
 
   const showCameraPosition = (): void => {
@@ -14,3 +14,5 @@ export default function GetCameraPositionButton() {
     >Get Camera Position</button>
   )
 }
+
+export default GetCameraPositionButton

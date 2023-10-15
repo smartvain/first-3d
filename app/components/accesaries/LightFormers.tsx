@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber'
 import { Lightformer, Float } from '@react-three/drei'
 import { Color, Depth, LayerMaterial } from 'lamina'
 
-export default function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
+const Lightformers = ({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) => {
   const group = useRef<THREE.Group>(null)
 
   useFrame((state, delta) => {
@@ -93,3 +93,5 @@ export default function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
     </>
   )
 }
+
+export default Lightformer
