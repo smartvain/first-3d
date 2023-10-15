@@ -8,7 +8,7 @@ import { Perf } from 'r3f-perf'
 
 import { setPosition } from 'features/camera'
 import { useAppDispatch } from 'hooks'
-import Lightformers from '@/components/object/LightFormers'
+import Lightformers from '@/components/accesaries/LightFormers'
 import GLTFModel from './models/GLTFModel'
 
 export default function ModelArea() {
