@@ -9,7 +9,7 @@ export default function GetCameraPositionButton() {
 
   return (
     <button
-      className="fixed top-4 right-4 z-10 bg-sky-500 hover:bg-sky-700 rounded-lg p-2"
+      className="fixed top-4 right-4 z-10 bg-gray-500 hover:bg-sky-700 rounded-lg p-2 shadow-xl"
       onClick={showCameraPosition}
     >Get Camera Position</button>
   )
