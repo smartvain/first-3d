@@ -2,7 +2,7 @@ import { useGLTF } from "@react-three/drei"
 import { Mesh } from "three"
 import { modelProps } from "."
 
-const GLTFModel = ({ src, position }: modelProps) => {
+const GLTFModel = ({ src, position, scale = 1 }: modelProps) => {
   const gltf = useGLTF(src)
 
   gltf.scene.traverse(node => {
@@ -15,7 +15,7 @@ const GLTFModel = ({ src, position }: modelProps) => {
   return (
     <primitive
       object={gltf.scene}
-      scale={1}
+      scale={scale}
       position={position}
     />
   )
