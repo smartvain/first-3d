@@ -1,11 +1,8 @@
-'use strict'
-
 import * as THREE from 'three'
 import { useRef, useState } from 'react'
 import { useThree } from '@react-three/fiber'
 import { useHelper, AccumulativeShadows, RandomizedLight, Environment } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
-
 import { setPosition } from 'features/camera'
 import { useAppDispatch } from 'hooks'
 import Lightformers from '@/components/accesaries/LightFormers'
@@ -33,7 +30,10 @@ export default function ModelArea() {
       <Perf position="top-left" />
 
       {/* 背景 */}
-      <color args={['ivory']} attach="background" />
+      <color
+        args={['ivory']}
+        attach="background"
+      />
 
       {/* 環境光 */}
       <ambientLight intensity={intensity} />
@@ -61,7 +61,12 @@ export default function ModelArea() {
         />
       </AccumulativeShadows>
 
-      <Environment frames={degraded ? 1 : Infinity} resolution={256} background blur={1}>
+      <Environment
+        frames={degraded ? 1 : Infinity}
+        resolution={256}
+        background
+        blur={1}
+      >
         <Lightformers />
       </Environment>
 

@@ -3,7 +3,7 @@ import cameraReducer from '@/features/camera'
 
 const store = configureStore({
   reducer: cameraReducer,
-  middleware: getDefaultMiddleware => 
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: ['camera/setPosition'],

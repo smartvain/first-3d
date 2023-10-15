@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { StrictMode, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Sky } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
 import ModelArea from './ModelArea'
 
 export default function CanvasWrapper () {
