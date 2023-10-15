@@ -20,7 +20,7 @@ export default function CanvasWrapper () {
             fov: 75,
             near: 0.1,
             far: 100,
-            position: [3, 0.5, -3]
+            position: [3, 0, 1.8]
           }}
         >
           <OrbitControls makeDefault />
