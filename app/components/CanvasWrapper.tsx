@@ -1,7 +1,8 @@
 import * as THREE from 'three'
 import { StrictMode, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Sky } from '@react-three/drei'
+import { OrbitControls } from '@react-three/drei'
+import CameraRig from './accesaries/CameraRig'
 import ModelArea from './ModelArea'
 
 export default function CanvasWrapper () {
@@ -20,7 +21,7 @@ export default function CanvasWrapper () {
             fov: 75,
             near: 0.1,
             far: 100,
-            position: [3, 0.5, -3]
+            position: [3, 0, 1.8]
           }}
         >
           <OrbitControls makeDefault />
@@ -28,6 +29,8 @@ export default function CanvasWrapper () {
           <Suspense fallback={null}>
             <ModelArea />
           </Suspense>
+
+          <CameraRig />
         </Canvas>
       </StrictMode>
     </div>
