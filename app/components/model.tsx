@@ -18,21 +18,6 @@ const enableCastShadow = (gltf: GLTF) => {
   })
 }
 
-export const GirlModel = ({ position, castShadow = true }: modelProps) => {
-  // https://sketchfab.com/3d-models/downloadable-girl-03-009a2895114b4903be1107ebd12b6192
-  const gltf = useGLTF('/3dmodels/downloadable_girl_03/scene.gltf')
-
-  if (castShadow) enableCastShadow(gltf)
-
-  return (
-    <primitive
-      object={gltf.scene}
-      scale={0.02}
-      position={position}
-    />
-  )
-}
-
 export const CarModel = ({ position, castShadow = true }: modelProps) => {
   // https://sketchfab.com/3d-models/free-gmc-motorhome-reimagined-low-poly-6hiH0iyDqXqtdD9wbqSbyLLhKmz
   const gltf = useGLTF('/3dmodels/free_gmc_motorhome_reimagined_low_poly/scene.gltf')
