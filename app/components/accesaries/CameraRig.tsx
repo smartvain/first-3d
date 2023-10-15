@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { useFrame } from '@react-three/fiber'
 
-export default function CameraRig({ vec3 = new THREE.Vector3() }) {
+const CameraRig = ({ vec3 = new THREE.Vector3() }) => {
 
   return useFrame((state) => {
     const time = state.clock.elapsedTime
@@ -9,3 +9,5 @@ export default function CameraRig({ vec3 = new THREE.Vector3() }) {
     state.camera.lookAt(0, -0.5, 0)
   })
 }
+
+export default CameraRig
