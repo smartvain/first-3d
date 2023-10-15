@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { useRef, useState } from 'react'
 import { useThree } from '@react-three/fiber'
-import { useHelper, AccumulativeShadows, RandomizedLight, Environment } from '@react-three/drei'
+import { useHelper, AccumulativeShadows, RandomizedLight, Environment, Sparkles, Stars } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { setPosition } from 'features/camera'
 import { useAppDispatch } from 'hooks'
@@ -12,13 +12,13 @@ export default function ModelArea() {
   const [degraded, degrade] = useState()
   const intensity = 4
 
-  const directionalLight = useRef<THREE.DirectionalLight>(null)
-  useHelper(
-    directionalLight as React.MutableRefObject<THREE.DirectionalLight>,
-    THREE.DirectionalLightHelper,
-    1,
-    'red'
-  )
+  // const directionalLight = useRef<THREE.DirectionalLight>(null)
+  // useHelper(
+  //   directionalLight as React.MutableRefObject<THREE.DirectionalLight>,
+  //   THREE.DirectionalLightHelper,
+  //   1,
+  //   'red'
+  // )
 
   const { camera } = useThree()
   const dispatch = useAppDispatch()
@@ -29,23 +29,23 @@ export default function ModelArea() {
       {/* モニター */}
       <Perf position="top-left" />
 
-      {/* 背景 */}
-      <color
-        args={['ivory']}
-        attach="background"
-      />
-
       {/* 環境光 */}
       <ambientLight intensity={intensity} />
+
+      {/* 自然光 */}
+      <hemisphereLight intensity={0.5} />
 
       {/* 平行光 */}
       <directionalLight
         castShadow
-        ref={directionalLight}
+        // ref={directionalLight}
         position={[3, 3, 8]}
         intensity={intensity}
         shadow-mapSize={[1024, 1024]}
       />
+
+      {/* パ＝ティクル */}
+      <Sparkles scale={10} />
 
       <AccumulativeShadows
         position={[0, -1.16, 0]}
