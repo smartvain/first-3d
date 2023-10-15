@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { useRef, useState } from 'react'
 import { useThree } from '@react-three/fiber'
-import { useHelper, AccumulativeShadows, RandomizedLight, Environment, Sparkles, Stars } from '@react-three/drei'
+import { useHelper, AccumulativeShadows, RandomizedLight, Environment, Sparkles } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { setPosition } from 'features/camera'
 import { useAppDispatch } from 'hooks'
