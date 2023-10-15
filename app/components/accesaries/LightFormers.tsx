@@ -27,7 +27,7 @@ export default function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
             <Lightformer
               key={i}
               form="circle"
-              intensity={2}
+              intensity={1.5}
               rotation={[Math.PI / 2, 0, 0]}
               position={[x, 4, i * 4]}
               scale={[3, 1, 1]}
@@ -63,7 +63,7 @@ export default function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
         <Lightformer
           form="ring"
           color="red"
-          intensity={1}
+          intensity={2}
           scale={10}
           position={[-15, 4, -18]}
           target={[0, 0, 0]}
@@ -76,11 +76,11 @@ export default function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
         <LayerMaterial side={THREE.BackSide}>
           <Color
             color="#444"
-            alpha={1}
+            alpha={1.1}
             mode="normal"
           />
           <Depth
-            colorA="blue"
+            colorA="black"
             colorB="black"
             alpha={0.5}
             mode="normal"
